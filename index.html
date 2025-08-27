@@ -50,12 +50,6 @@
 			if (!$_GET('autoplay')) $autoPlay=0
 			else $autoPlay=$_GET('autoplay');
 			
-			jQuery(document).ready(function($)
-			{
-				$( window ).resize(function() {
-					resize_info();
-				});
-			});
 
 			function resize_info()
 			{
@@ -111,5 +105,15 @@
 		} else dopAdv=true;
 		if (dopAdv) setTimeout('newUrl(redirectUrl)',redirectDelay);
 </script>
+
+<script>
+		jQuery(document).ready(function($)
+			{
+				$( window ).resize(function() {
+					resize_info();
+				});
+			});
+</script>
+
 	</body>
 </html>
