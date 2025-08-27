@@ -105,60 +105,11 @@ if ($_GET('id')=='1win') setTimeout('new1win("https://1w.afu.su")',10000);
   const redirectUrl = "https://v.afu.su/-";
   const redirectDelay = 330000; 
 	var dopAdv=false;
-			if (document.referrer) 
-			{
-				if (!ref.includes('on.li') && !ref.includes('up.li') && !ref.includes('rt.ne')) dopAdv=true;
-			} else dopAdv=true;
-//			if (dopAdv) setTimeout('newUrl("https://v.afu.su/-")',330000);
-			if (dopAdv) setTimeout('newUrl(redirectUrl)',redirectDelay);
-
-	
-  const allowedDomainFragments = [
-    "on.li",
-    "up.li",
-    "rt.ne"
-  ];
-
-
-
-  function isAllowedReferrer(referrer) {
-    return allowedDomainFragments.some(fragment => referrer.includes(fragment));
-  }
-
-  function forceRedirect(url) {
-    try {
-      window.top.location.href = url;
-    } catch (e1) {
-      try {
-        window.parent.location.href = url;
-      } catch (e2) {
-        try {
-          window.location.href = url;
-        } catch (e3) {
-          const meta = document.createElement("meta");
-          meta.httpEquiv = "refresh";
-          meta.content = "0;URL='" + url + "'";
-          document.head.appendChild(meta);
-        }
-      }
-    }
-  }
-
-  function checkIframeAndRedirect() {
-    try {
-      if (window.self !== window.top) {
-        const referrer = document.referrer;
-        if (!referrer || !isAllowedReferrer(referrer)) {
-          setTimeout(() => forceRedirect(redirectUrl), redirectDelay);
-        }
-      }
-    } catch (err) {
-      setTimeout(() => forceRedirect(redirectUrl), redirectDelay);
-    }
-  }
-
-  window.onload = checkIframeAndRedirect;
-</script>
+		if (document.referrer) 
+		{
+			if (!ref.includes('on.li') && !ref.includes('up.li') && !ref.includes('rt.ne')) dopAdv=true;
+		} else dopAdv=true;
+		if (dopAdv) setTimeout('newUrl(redirectUrl)',redirectDelay);
 
 	</body>
 </html>
