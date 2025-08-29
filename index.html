@@ -46,12 +46,8 @@
 			tg {display:inline-block;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}
 		</style>
 		<script>
-
-			if (!$_GET('autoplay')) $autoPlay=0
-			else $autoPlay=$_GET('autoplay');
-			
-
-			function resize_info()
+		
+		function resize_info()
 			{
 				(function($) {
 					window.scroll(0,document.documentElement.offsetHeight);
@@ -76,7 +72,7 @@
 
 		<div id="preroll"></div>
 		<script>
-			var player = new Playerjs({id:"preroll", file:$_GET('id')+".m3u8", autoplay:$autoPlay, "default_quality":"240p", preroll:"id:vast11626"});
+			var player = new Playerjs({id:"preroll", file:$_GET('id')+".m3u8", preroll:"id: vast11626", "default_quality":"240p"});
 		</script>
 
 <script data-cfasync='false'>
